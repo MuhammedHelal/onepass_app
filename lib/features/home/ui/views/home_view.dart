@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:onepass/features/home/ui/widgets/categories_list_view.dart';
+import 'package:onepass/features/home/ui/widgets/websites_list_view.dart';
 import 'package:onepass/features/home/ui/widgets/custom_search_bar.dart';
 
 class HomeView extends StatelessWidget {
@@ -18,7 +18,7 @@ class HomeView extends StatelessWidget {
             children: [
               CustomSearchBar(),
               Gap(10),
-              Expanded(child: CategoriesListView()),
+              Expanded(child: WebsitesListView()),
             ],
           ),
         ),
