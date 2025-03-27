@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:onepass/core/utils/colors.dart';
+import 'package:onepass/features/home/ui/views/home_view.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
 class AppPresistentBottomNavBar extends StatefulWidget {
@@ -65,7 +66,7 @@ class _AppPresistentBottomNavBarState extends State<AppPresistentBottomNavBar> {
 
   List<Widget> _buildScreens() {
     return [
-      Placeholder(),
+      HomeView(),
       Container(
         color: Colors.red,
         child: SizedBox.expand(),
