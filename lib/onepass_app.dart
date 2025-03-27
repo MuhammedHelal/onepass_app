@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onepass/presistent_bottom_navbar.dart';
 
 class OnePassApp extends StatelessWidget {
   const OnePassApp({super.key});
@@ -11,7 +12,7 @@ class OnePassApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Placeholder(),
+      home: AppPresistentBottomNavBar(),
     );
   }
 }
