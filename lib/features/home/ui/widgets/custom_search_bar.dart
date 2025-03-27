@@ -11,7 +11,7 @@ class CustomSearchBar extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
         ),
       ),
-      hintText: 'search ...',
+      hintText: 'Search websites ...',
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:onepass/core/utils/colors.dart';
+import 'package:onepass/features/add/ui/views/add_view.dart';
 import 'package:onepass/features/home/ui/views/home_view.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
@@ -67,10 +68,7 @@ class _AppPresistentBottomNavBarState extends State<AppPresistentBottomNavBar> {
   List<Widget> _buildScreens() {
     return [
       HomeView(),
-      Container(
-        color: Colors.red,
-        child: SizedBox.expand(),
-      ),
+      AddView(),
       Scaffold(),
     ];
   }
@@ -84,14 +82,17 @@ class _AppPresistentBottomNavBarState extends State<AppPresistentBottomNavBar> {
         inactiveColorPrimary: AppColors.lighterBlack,
       ),
       PersistentBottomNavBarItem(
-        icon: Icon(CupertinoIcons.home),
-        title: ("Home"),
+        icon: Icon(
+          Icons.add,
+          color: Colors.white,
+          size: 28,
+        ),
         activeColorPrimary: AppColors.primary,
         inactiveColorPrimary: AppColors.lighterBlack,
       ),
       PersistentBottomNavBarItem(
-        icon: Icon(CupertinoIcons.settings),
-        title: ("Settings"),
+        icon: Icon(Icons.password),
+        title: ("Passwords"),
         activeColorPrimary: AppColors.primary,
         inactiveColorPrimary: AppColors.lighterBlack,
       ),
