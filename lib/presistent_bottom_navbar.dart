@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:onepass/core/utils/colors.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
 class AppPresistentBottomNavBar extends StatefulWidget {
@@ -12,6 +13,7 @@ class AppPresistentBottomNavBar extends StatefulWidget {
 
 class _AppPresistentBottomNavBarState extends State<AppPresistentBottomNavBar> {
   late final PersistentTabController _controller;
+
   @override
   void initState() {
     super.initState();
@@ -26,37 +28,39 @@ class _AppPresistentBottomNavBarState extends State<AppPresistentBottomNavBar> {
 
   @override
   Widget build(BuildContext context) {
-    return PersistentTabView(context,
-        controller: _controller,
-        screens: _buildScreens(),
-        items: _navBarsItems(),
-        handleAndroidBackButtonPress: true, // Default is true.
-        resizeToAvoidBottomInset:
-            true, // This needs to be true if you want to move up the screen on a non-scrollable screen when keyboard appears. Default is true.
-        stateManagement: true, // Default is true.
-        hideNavigationBarWhenKeyboardAppears: true,
-        popBehaviorOnSelectedNavBarItemPress: PopBehavior.all,
-        padding: const EdgeInsets.only(top: 8),
-        backgroundColor: Colors.grey.shade900,
-        isVisible: true,
-        animationSettings: const NavBarAnimationSettings(
-          navBarItemAnimation: ItemAnimationSettings(
-            // Navigation Bar's items animation properties.
-            duration: Duration(milliseconds: 400),
-            curve: Curves.ease,
-          ),
-          screenTransitionAnimation: ScreenTransitionAnimationSettings(
-            // Screen transition animation on change of selected tab.
-            animateTabTransition: true,
-            duration: Duration(milliseconds: 200),
-            screenTransitionAnimationType: ScreenTransitionAnimationType.fadeIn,
-          ),
+    return PersistentTabView(
+      context,
+      controller: _controller,
+      screens: _buildScreens(),
+      items: _navBarsItems(),
+      decoration: NavBarDecoration(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(8.0),
+          topRight: Radius.circular(8.0),
         ),
-        confineToSafeArea: true,
-        navBarHeight: kBottomNavigationBarHeight,
-        navBarStyle:
-            NavBarStyle.style15 // Choose the nav bar style with this property
-        );
+      ),
+      margin: EdgeInsets.only(
+        left: 43,
+        right: 43,
+        bottom: 33,
+      ),
+      backgroundColor: AppColors.lightGrey,
+      padding: const EdgeInsets.only(top: 8),
+      animationSettings: const NavBarAnimationSettings(
+        navBarItemAnimation: ItemAnimationSettings(
+          duration: Duration(milliseconds: 400),
+          curve: Curves.ease,
+        ),
+        screenTransitionAnimation: ScreenTransitionAnimationSettings(
+          animateTabTransition: true,
+          duration: Duration(milliseconds: 200),
+          screenTransitionAnimationType: ScreenTransitionAnimationType.fadeIn,
+        ),
+      ),
+      confineToSafeArea: true,
+      navBarHeight: kBottomNavigationBarHeight,
+      navBarStyle: NavBarStyle.style15,
+    );
   }
 
   List<Widget> _buildScreens() {
@@ -75,20 +79,20 @@ class _AppPresistentBottomNavBarState extends State<AppPresistentBottomNavBar> {
       PersistentBottomNavBarItem(
         icon: Icon(CupertinoIcons.home),
         title: ("Home"),
-        activeColorPrimary: CupertinoColors.activeBlue,
-        inactiveColorPrimary: CupertinoColors.systemGrey,
+        activeColorPrimary: AppColors.primary,
+        inactiveColorPrimary: AppColors.lighterBlack,
       ),
       PersistentBottomNavBarItem(
         icon: Icon(CupertinoIcons.home),
         title: ("Home"),
-        activeColorPrimary: CupertinoColors.activeBlue,
-        inactiveColorPrimary: CupertinoColors.systemGrey,
+        activeColorPrimary: AppColors.primary,
+        inactiveColorPrimary: AppColors.lighterBlack,
       ),
       PersistentBottomNavBarItem(
         icon: Icon(CupertinoIcons.settings),
         title: ("Settings"),
-        activeColorPrimary: CupertinoColors.activeBlue,
-        inactiveColorPrimary: CupertinoColors.systemGrey,
+        activeColorPrimary: AppColors.primary,
+        inactiveColorPrimary: AppColors.lighterBlack,
       ),
     ];
   }

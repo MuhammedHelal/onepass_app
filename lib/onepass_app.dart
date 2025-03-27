@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onepass/core/theming/theme.dart';
 import 'package:onepass/presistent_bottom_navbar.dart';
 
 class OnePassApp extends StatelessWidget {
@@ -7,11 +8,8 @@ class OnePassApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: AppTheme.lightTheme,
+      themeMode: ThemeMode.light,
       home: AppPresistentBottomNavBar(),
     );
   }
